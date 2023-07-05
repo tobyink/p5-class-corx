@@ -1,0 +1,16 @@
+# This file acts as the project's changelog.
+
+`Class-CorX 0.000_001 cpan:TOBYINK`
+	issued  2023-07-05;
+	label   "First preview release".
+
+#`PerlX-Maybe-XS 1.001 cpan:TOBYINK`
+#	issued  2014-02-21;
+#	changeset [
+#		item [
+#			a dcs:Packaging;
+#			label "Recommend PerlX::Maybe, not Perl::Maybe!";
+#			dcs:thanks cpan:KENTNL;
+#			dcs:fixes RT#93227;
+#		];
+#	].

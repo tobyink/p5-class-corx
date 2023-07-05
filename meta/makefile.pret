@@ -1,0 +1,11 @@
+# This file provides instructions for packaging.
+
+@prefix : <http://ontologi.es/doap-deps#>.
+
+`Class-CorX`
+	:runtime-requirement    [ :on "perl 5.038"^^:CpanId ];
+	:test-requirement       [ :on "Test2::V0"^^:CpanId ];
+	:test-requirement       [ :on "Tuple::Munge"^^:CpanId ];
+	:develop-recommendation [ :on "Dist::Inkt 0.001"^^:CpanId ];
+	.
+

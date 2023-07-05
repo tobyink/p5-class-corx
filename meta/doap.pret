@@ -1,0 +1,18 @@
+# This file contains general metadata about the project.
+
+@prefix : <http://usefulinc.com/ns/doap#>.
+
+`Class-CorX`
+	:programming-language "Perl" ;
+	:shortdesc            "tools for manipulating classes built via the Perl 5.38 `class` keyword";
+	:homepage             <https://metacpan.org/release/Class-CorX>;
+	:download-page        <https://metacpan.org/release/Class-CorX>;
+	:bug-database         <https://github.com/tobyink/p5-class-corx/issues>;
+	:repository           [ a :GitRepository; :browse <https://github.com/tobyink/p5-class-corx> ];
+	:created              2023-07-04;
+	:license              <http://dev.perl.org/licenses/>;
+	:maintainer           cpan:TOBYINK;
+	:developer            cpan:TOBYINK.
+
+<http://dev.perl.org/licenses/>
+	dc:title  "the same terms as the perl 5 programming language system itself".
