@@ -83,14 +83,12 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        os:                 [ 'ubuntu-latest' ]
-        perl:               [  ]
+        os:                 [ 'ubuntu-latest', 'windows-latest', 'macos-latest' ]
+        perl:               [ '5.38' ]
         coverage:           [ false ]
-        threaded:           [ null ]
+        threaded:           [ true, false ]
         extra_dependencies: [ true ]
         extended_testing:   [ 'extended' ]
-        exclude:
-          - { os: 'windows-latest', perl: '5.4' }
         include:
           - os: 'ubuntu-latest'
             perl: '5.38'
