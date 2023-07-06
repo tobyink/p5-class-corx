@@ -73,7 +73,7 @@ jobs:
       - name: META.yml
         run: cat build/META.yml
   test:
-    name: Perl ${{ matrix.perl }} ${{ matrix.os }} ${{ matrix.joblabel }}
+    name: Perl ${{ matrix.perl }} ${{ matrix.os }} [thr=${{ matrix.threaded }}] ${{ matrix.joblabel }}
     needs: dist
     runs-on: ${{ ( ( matrix.os == 'strawberry') && 'windows-latest' ) || matrix.os }}
     env:
@@ -81,17 +81,21 @@ jobs:
       GHA_TESTING_COVER:    ${{ matrix.coverage }}
       GHA_INSTALL_EXTRAS:   ${{ matrix.extra_dependencies }}
     strategy:
-      fail-fast: true
+      fail-fast: false
       matrix:
-        os:                 [ 'ubuntu-latest', 'windows-latest', 'macos-latest' ]
-        perl:               [ '5.38' ]
+        os:                 [ 'ubuntu-latest', 'windows-latest', 'macos-latest'
+ ]
+        perl:               [ '5.38'
+ ]
         coverage:           [ false ]
-        threaded:           [ true, false ]
+        threaded:           [ false, true ]
         extra_dependencies: [ true ]
         extended_testing:   [ 'extended' ]
+        exclude:
+          - { os: 'windows-latest', perl: '5.4' }
         include:
           - os: 'ubuntu-latest'
-            perl: '5.38'
+            perl: '5.36'
             threaded: false
             coverage: true
             extra_dependencies: true
